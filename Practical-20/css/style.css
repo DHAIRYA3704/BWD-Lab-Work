@@ -1,0 +1,132 @@
+/* Practical 20 - Shared styles for all pages */
+
+:root {
+  --navy: #051A37;
+  --cyan: #0DA9D1;
+  --cyan-dark: #0A8FB2;
+  --light: #F3F8FC;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--navy);
+  background-color: #FFFFFF;
+}
+
+.navbar {
+  background-color: var(--navy);
+}
+
+.navbar .nav-link {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--cyan) !important;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--navy), var(--cyan-dark));
+  color: #FFFFFF;
+  padding: 80px 0;
+}
+
+.hero h1 {
+  font-weight: 800;
+}
+
+.btn-brand {
+  background-color: var(--cyan);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.btn-brand:hover {
+  background-color: #FFFFFF;
+  color: var(--navy);
+}
+
+.section-title {
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--cyan);
+  transform: translateX(-50%);
+}
+
+.stat {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--cyan);
+}
+
+.card {
+  border: 1px solid #DCE6F0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(5, 26, 55, 0.15);
+}
+
+.price-tag {
+  color: var(--cyan-dark);
+  font-weight: 700;
+}
+
+.filter-btn.active {
+  background-color: var(--navy);
+  color: #FFFFFF;
+}
+
+.bg-soft {
+  background-color: var(--light);
+}
+
+.step-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--cyan);
+  color: #FFFFFF;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  background-color: var(--navy);
+  color: #CFE3F0;
+}
+
+footer a {
+  color: #CFE3F0;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--cyan);
+}
+
+pre {
+  background-color: var(--navy);
+  color: #9FE3F5;
+  padding: 15px;
+  border-radius: 10px;
+}
