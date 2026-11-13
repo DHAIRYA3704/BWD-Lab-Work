@@ -1,6 +1,6 @@
 # Basic of Web Development – Lab Work
 
-**Subject:** Basic of Web Development (C05BC0203)
+**Subject:** Basic of Web Development (C05BC3104)
 **Course:** Online BCA – Semester 1 (2026-27), Faculty of Computer Applications, Marwadi University
 **Student:** Dhairyakumar Kalpeshkumar Shukla
 **Enrollment No.:** 32601020092
