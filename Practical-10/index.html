@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 10 - Geolocation and iframe</title>
+</head>
+<body>
+  <h1>Marwadi University &ndash; College Information</h1>
+  <p>
+    Marwadi University offers programs in engineering, computer applications,
+    management, science and more. I study the <b>Online BCA</b> program at its
+    Faculty of Computer Applications.
+  </p>
+
+  <h2>1. Find Your Location (HTML5 Geolocation)</h2>
+  <button onclick="getLocation()">Show My Location</button>
+  <p id="result">Click the button to see your latitude and longitude.</p>
+
+  <h2>2. College Location (iframe)</h2>
+  <iframe
+    src="https://www.google.com/maps?q=Marwadi+University,+Rajkot&amp;output=embed"
+    width="600" height="350" style="border: 0;" loading="lazy"
+    title="Map of Marwadi University">
+  </iframe>
+
+  <h2>Purpose of using an iframe</h2>
+  <ul>
+    <li>An <b>&lt;iframe&gt;</b> (inline frame) shows another webpage inside the current page.</li>
+    <li>Here it embeds Google Maps, so visitors can see the college location without leaving our site.</li>
+    <li>It saves effort &mdash; we reuse a ready service instead of building our own map.</li>
+    <li>It is also used for YouTube videos, forms and documents.</li>
+  </ul>
+
+  <script>
+    function getLocation() {
+      let result = document.getElementById("result");
+      if (navigator.geolocation) {
+        result.innerHTML = "Finding your location...";
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        result.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      let lat = position.coords.latitude.toFixed(4);
+      let lon = position.coords.longitude.toFixed(4);
+      document.getElementById("result").innerHTML =
+        "Latitude: " + lat + "<br>Longitude: " + lon;
+    }
+
+    function showError(error) {
+      let msg = "Unable to get location.";
+      if (error.code === error.PERMISSION_DENIED) {
+        msg = "You denied the location permission.";
+      }
+      document.getElementById("result").innerHTML = msg;
+    }
+  </script>
+</body>
+</html>
