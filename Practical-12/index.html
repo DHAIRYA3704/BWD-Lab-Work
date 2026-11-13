@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 12 - Admission Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-box">
+    <img src="../assets/images/logo.png" alt="Electrofly Tech Studio" class="logo">
+    <h1>Admission Form</h1>
+    <p class="note">Robotics &amp; Coding Course &ndash; Batch 2026-27</p>
+
+    <form action="#" method="post">
+      <div class="row">
+        <div class="field">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="First name" required>
+        </div>
+        <div class="field">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Last name" required>
+        </div>
+      </div>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@example.com" required>
+
+      <label for="phone">Mobile Number</label>
+      <input type="tel" id="phone" placeholder="10-digit number">
+
+      <label for="course">Course</label>
+      <select id="course">
+        <option>Robotics with Arduino</option>
+        <option>Coding &amp; AI</option>
+        <option>Drone Building</option>
+        <option>IoT with ESP32</option>
+      </select>
+
+      <label>Mode</label>
+      <div class="options">
+        <input type="radio" id="online" name="mode" checked>
+        <label for="online" class="inline">Online</label>
+        <input type="radio" id="studio" name="mode">
+        <label for="studio" class="inline">At studio</label>
+      </div>
+
+      <label for="msg">Why do you want to join?</label>
+      <textarea id="msg" rows="3" placeholder="Tell us in a few lines"></textarea>
+
+      <input type="submit" value="Submit Admission">
+    </form>
+  </div>
+</body>
+</html>

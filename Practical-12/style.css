@@ -1,0 +1,116 @@
+/* Practical 12 - Admission form with CSS box model */
+
+* {
+  box-sizing: border-box;          /* width includes padding + border */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #051A37, #0A8FB2);
+  margin: 0;
+  padding: 40px 15px;
+}
+
+/* Box model: content + padding + border + margin */
+.form-box {
+  max-width: 520px;
+  margin: 0 auto;                  /* centers the box */
+  padding: 30px 35px;
+  background-color: #FFFFFF;
+  border: 3px solid #0DA9D1;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.logo {
+  display: block;
+  width: 170px;
+  margin: 0 auto 10px;
+}
+
+/* Text effects */
+h1 {
+  text-align: center;
+  color: #051A37;
+  margin: 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 0 #9FE3F5;
+}
+
+.note {
+  text-align: center;
+  color: #4A5F7E;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Element selector */
+label {
+  display: block;
+  font-weight: bold;
+  color: #051A37;
+  margin: 14px 0 6px;
+}
+
+/* Class selector */
+.inline {
+  display: inline;
+  font-weight: normal;
+  margin: 0 15px 0 4px;
+}
+
+/* Attribute selectors */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #DCE6F0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+/* Pseudo-class selector */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0DA9D1;
+  outline: none;
+  background-color: #F3F8FC;
+}
+
+input[type="submit"] {
+  width: 100%;
+  margin-top: 22px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0DA9D1;
+  color: #FFFFFF;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #051A37;
+}
+
+/* Two fields side by side */
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.field {
+  flex: 1;
+}
+
+.options {
+  padding: 8px 0;
+}
