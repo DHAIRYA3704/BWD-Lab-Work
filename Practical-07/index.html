@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 7 - Registration Form</title>
+</head>
+<body>
+  <h1>Electrofly Workshop &ndash; Student Registration</h1>
+
+  <form action="#" method="post">
+    <fieldset>
+      <legend>Personal Details</legend>
+
+      <p>
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </p>
+
+      <p>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </p>
+
+      <p>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" minlength="6" required>
+      </p>
+
+      <p>
+        Gender:<br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+      </p>
+
+      <p>
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob">
+      </p>
+
+      <p>
+        <label for="phone">Mobile Number:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit number">
+      </p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Course Details</legend>
+
+      <p>
+        <label for="city">City:</label><br>
+        <select id="city" name="city">
+          <option value="">-- Select City --</option>
+          <option>Ahmedabad</option>
+          <option>Gandhinagar</option>
+          <option>Rajkot</option>
+          <option>Vadodara</option>
+          <option>Surat</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="course">Course:</label><br>
+        <input list="courses" id="course" name="course" placeholder="Choose a course">
+        <datalist id="courses">
+          <option value="Robotics with Arduino">
+          <option value="Coding &amp; AI">
+          <option value="Drone Building">
+          <option value="IoT with ESP32">
+          <option value="3D Design &amp; Printing">
+        </datalist>
+      </p>
+
+      <p>
+        Hobbies:<br>
+        <input type="checkbox" id="h1" name="hobby" value="robotics">
+        <label for="h1">Robotics</label>
+        <input type="checkbox" id="h2" name="hobby" value="coding">
+        <label for="h2">Coding</label>
+        <input type="checkbox" id="h3" name="hobby" value="gaming">
+        <label for="h3">Gaming</label>
+        <input type="checkbox" id="h4" name="hobby" value="music">
+        <label for="h4">Music</label>
+      </p>
+
+      <p>
+        <label for="batch">Preferred Batch Time:</label><br>
+        <input type="time" id="batch" name="batch">
+      </p>
+
+      <p>
+        <label for="level">Your Coding Level (0&ndash;10):</label><br>
+        <input type="range" id="level" name="level" min="0" max="10">
+      </p>
+
+      <p>
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="40"></textarea>
+      </p>
+    </fieldset>
+
+    <p>
+      <input type="submit" value="Register">
+      <input type="reset" value="Clear">
+    </p>
+  </form>
+</body>
+</html>
