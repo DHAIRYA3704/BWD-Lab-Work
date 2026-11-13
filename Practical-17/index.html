@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 17 - Eligibility Checker</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: linear-gradient(135deg,#051A37,#0A8FB2);
+           min-height: 100vh; margin: 0; display: flex; align-items: center; justify-content: center; }
+    .card { background: #fff; padding: 30px; border-radius: 14px; width: 360px; }
+    h2 { color: #051A37; margin-top: 0; }
+    label { display: block; margin-top: 12px; font-weight: bold; color: #051A37; }
+    input { width: 100%; padding: 9px; box-sizing: border-box; border: 1px solid #DCE6F0; border-radius: 6px; }
+    button { width: 100%; margin-top: 20px; padding: 11px; border: none; border-radius: 6px;
+             background: #0DA9D1; color: #fff; font-size: 16px; cursor: pointer; }
+    .rules { font-size: 13px; color: #4A5F7E; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Exam Eligibility Checker</h2>
+    <p class="rules">Rules: Age 17+, Attendance 75%+, Marks 40+</p>
+
+    <label for="age">Age</label>
+    <input type="number" id="age">
+
+    <label for="attendance">Attendance (%)</label>
+    <input type="number" id="attendance">
+
+    <label for="marks">Internal Marks (out of 100)</label>
+    <input type="number" id="marks">
+
+    <button onclick="checkEligibility()">Check Eligibility</button>
+  </div>
+
+  <script>
+    function checkEligibility() {
+      let age = parseInt(document.getElementById("age").value);
+      let attendance = parseFloat(document.getElementById("attendance").value);
+      let marks = parseFloat(document.getElementById("marks").value);
+
+      if (isNaN(age) || isNaN(attendance) || isNaN(marks)) {
+        alert("Please fill all three fields with numbers.");
+        return;
+      }
+
+      if (age >= 17 && attendance >= 75 && marks >= 40) {
+        alert("Congratulations! You are ELIGIBLE for the examination.");
+      } else {
+        let reason = "You are NOT eligible because:\n";
+        if (age < 17) {
+          reason += "- Age is below 17\n";
+        }
+        if (attendance < 75) {
+          reason += "- Attendance is below 75%\n";
+        }
+        if (marks < 40) {
+          reason += "- Marks are below 40\n";
+        }
+        alert(reason);
+
+        if (attendance < 75 && attendance >= 65) {
+          let apply = confirm("Your attendance is close. Do you want to apply for condonation?");
+          if (apply) {
+            alert("Request noted. Please meet your faculty coordinator.");
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
