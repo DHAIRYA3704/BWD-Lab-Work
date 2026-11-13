@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 16 - Result Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #F3F8FC; color: #051A37; padding: 30px; }
+    .box { max-width: 460px; margin: auto; background: #fff; padding: 25px; border-radius: 12px;
+           border-top: 6px solid #0DA9D1; box-shadow: 0 8px 20px rgba(5,26,55,.12); }
+    label { display: block; margin-top: 12px; font-weight: bold; }
+    input { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #DCE6F0; border-radius: 6px; }
+    button { margin-top: 18px; width: 100%; padding: 11px; background: #0DA9D1; color: #fff;
+             border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
+    #result { margin-top: 20px; padding: 14px; background: #E3F6FC; border-radius: 8px; display: none; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Student Result Calculator</h2>
+
+    <label for="sub1">Computer Fundamentals</label>
+    <input type="number" id="sub1" min="0" max="100">
+
+    <label for="sub2">Programming in C</label>
+    <input type="number" id="sub2" min="0" max="100">
+
+    <label for="sub3">Basic of Web Development</label>
+    <input type="number" id="sub3" min="0" max="100">
+
+    <label for="sub4">Mathematics for Computing</label>
+    <input type="number" id="sub4" min="0" max="100">
+
+    <label for="sub5">Communication Skills</label>
+    <input type="number" id="sub5" min="0" max="100">
+
+    <button onclick="calculateResult()">Calculate Result</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    // Returns the grade for a given percentage
+    function getGrade(percentage) {
+      if (percentage >= 90) {
+        return "A+";
+      } else if (percentage >= 80) {
+        return "A";
+      } else if (percentage >= 70) {
+        return "B";
+      } else if (percentage >= 60) {
+        return "C";
+      } else if (percentage >= 50) {
+        return "D";
+      } else {
+        return "F";
+      }
+    }
+
+    function calculateResult() {
+      const SUBJECTS = 5;
+      const MAX_MARKS = 100;
+      let total = 0;
+      let failed = false;
+
+      for (let i = 1; i <= SUBJECTS; i++) {
+        let marks = parseFloat(document.getElementById("sub" + i).value);
+
+        if (isNaN(marks) || marks < 0 || marks > MAX_MARKS) {
+          alert("Please enter valid marks (0-100) for all subjects.");
+          return;
+        }
+        if (marks < 35) {
+          failed = true;            // fail in any one subject
+        }
+        total = total + marks;
+      }
+
+      let percentage = (total / (SUBJECTS * MAX_MARKS)) * 100;
+      let grade = failed ? "F" : getGrade(percentage);
+      let status = (grade === "F") ? "FAIL" : "PASS";
+
+      let box = document.getElementById("result");
+      box.style.display = "block";
+      box.innerHTML =
+        "<b>Total:</b> " + total + " / " + (SUBJECTS * MAX_MARKS) + "<br>" +
+        "<b>Percentage:</b> " + percentage.toFixed(2) + " %<br>" +
+        "<b>Grade:</b> " + grade + "<br>" +
+        "<b>Result:</b> " + status;
+    }
+  </script>
+</body>
+</html>
