@@ -1,0 +1,108 @@
+/* Practical 11 - External CSS for the Student Profile page */
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #F3F8FC;
+  color: #051A37;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #051A37;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  color: #9FE3F5;
+  margin: 8px 0 0;
+}
+
+/* Navigation */
+nav {
+  background-color: #0DA9D1;
+  text-align: center;
+  padding: 12px;
+  font-size: 0;           /* removes gaps from the | characters */
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background-color: #051A37;
+}
+
+/* Sections */
+main {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+section {
+  background-color: #FFFFFF;
+  border: 1px solid #DCE6F0;
+  border-left: 6px solid #0DA9D1;
+  border-radius: 10px;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+}
+
+section h2 {
+  color: #0A8FB2;
+  margin-top: 0;
+  border-bottom: 2px dashed #DCE6F0;
+  padding-bottom: 8px;
+}
+
+.profile-photo {
+  width: 160px;
+  float: right;
+  border: 4px solid #0DA9D1;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+ul, ol {
+  padding-left: 22px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+a {
+  color: #0A8FB2;
+}
+
+.top-link {
+  display: block;
+  clear: both;
+  text-align: right;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #051A37;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
