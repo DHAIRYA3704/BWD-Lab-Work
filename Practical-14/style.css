@@ -1,0 +1,59 @@
+/* Practical 14 - Restaurant menu styles */
+
+body {
+  background-color: #FFF8EE;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Gradient header */
+.menu-header {
+  background: linear-gradient(120deg, #8B2E10, #E08A2E, #8B2E10);
+}
+
+/* Text effects */
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.45);
+}
+
+.category {
+  display: inline-block;
+  color: #8B2E10;
+  border-bottom: 4px double #E08A2E;
+  padding-bottom: 4px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* Cards with borders */
+.food-card {
+  border: 2px solid #F0D2A8;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.food-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(139, 46, 16, 0.25);
+}
+
+.food-card .card-title {
+  color: #5A1E0B;
+  font-weight: bold;
+}
+
+.price {
+  background: linear-gradient(90deg, #E08A2E, #C0541E);
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 2px 12px;
+  border-radius: 20px;
+  height: fit-content;
+}
+
+.menu-footer {
+  background: linear-gradient(90deg, #5A1E0B, #8B2E10);
+}
