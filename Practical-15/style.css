@@ -1,0 +1,201 @@
+/* Practical 15 - Pseudo-classes, pseudo-elements, transitions, animations */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #051A37;
+  background-color: #F3F8FC;
+}
+
+/* ---------- Navigation styling ---------- */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #051A37;
+  padding: 10px 40px;
+}
+
+.logo {
+  height: 45px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  position: relative;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+/* Pseudo-element: animated underline */
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  bottom: 2px;
+  width: 0;
+  height: 3px;
+  background-color: #0DA9D1;
+  transition: width 0.3s;
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+  width: calc(100% - 24px);
+}
+
+/* ---------- Product section ---------- */
+.product {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.image-box {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* Image manipulation on hover */
+.product-img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s, filter 0.5s;
+}
+
+.product-img:hover {
+  transform: scale(1.08) rotate(-2deg);
+  filter: brightness(1.15);
+}
+
+.details {
+  flex: 1;
+  animation: slideIn 1s ease-out;   /* keyframe animation */
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.tag {
+  background-color: #0DA9D1;
+  color: #FFFFFF;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(13, 169, 209, 0.6); }
+  50%      { box-shadow: 0 0 0 8px rgba(13, 169, 209, 0); }
+}
+
+.price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0A8FB2;
+}
+
+.price s {
+  font-size: 18px;
+  color: #7A8CA6;
+}
+
+/* Button with :hover and :active */
+.btn {
+  display: inline-block;
+  background-color: #051A37;
+  color: #FFFFFF;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #0DA9D1;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Features ---------- */
+.features,
+.gallery {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Pseudo-element: custom bullet */
+.feature-list li::before {
+  content: "\2713";
+  color: #FFFFFF;
+  background-color: #0DA9D1;
+  border-radius: 50%;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.feature-list li {
+  padding: 8px 0;
+}
+
+/* :nth-child pseudo-class */
+.feature-list li:nth-child(even) {
+  color: #0A8FB2;
+}
+
+/* ---------- Gallery ---------- */
+.thumbs {
+  display: flex;
+  gap: 15px;
+}
+
+.thumbs img {
+  width: 32%;
+  border-radius: 10px;
+  filter: grayscale(100%);
+  transition: filter 0.4s, transform 0.4s;
+}
+
+.thumbs img:hover {
+  filter: grayscale(0%);
+  transform: translateY(-6px);
+}
+
+.hint::first-letter {
+  font-size: 22px;
+  color: #0DA9D1;
+}
+
+footer {
+  background-color: #051A37;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 16px;
+}
