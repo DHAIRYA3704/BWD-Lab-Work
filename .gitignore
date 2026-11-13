@@ -1,0 +1,7 @@
+# helper scripts (not part of the assignment)
+push-day*.bat
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
