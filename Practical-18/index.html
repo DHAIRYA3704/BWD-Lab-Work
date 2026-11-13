@@ -8,7 +8,7 @@
     body { font-family: Arial, sans-serif; margin: 0; background: #F3F8FC; color: #051A37; }
     header { background: #051A37; color: #fff; padding: 20px; text-align: center; }
     .layout { display: flex; gap: 25px; max-width: 900px; margin: 30px auto; padding: 0 20px; }
-    #subjectList { list-style: none; padding: 0; width: 280px; }
+    #subjectList { list-style: none; padding: 0; width: 320px; }
     #subjectList li { background: #fff; padding: 12px 15px; margin-bottom: 8px; border-radius: 8px;
                       border-left: 5px solid #DCE6F0; cursor: pointer; transition: .2s; }
     #subjectList li:hover { border-left-color: #0DA9D1; }
@@ -34,16 +34,18 @@
   <script>
     // Array of subject objects
     let subjects = [
-      { name: "Computer Fundamentals", type: "Theory", credits: 4,
-        info: "Basics of computer hardware, software, number systems and operating systems." },
-      { name: "Programming in C", type: "Theory + Lab", credits: 4,
-        info: "Problem solving with C: variables, loops, arrays, functions and pointers." },
-      { name: "Basic of Web Development", type: "Theory + Lab", credits: 4,
+      { name: "Entrepreneurship", type: "Theory", faculty: "Prof. Pooja Paun",
+        info: "Business ideas, startup basics, business plans and funding." },
+      { name: "Mathematics - 1", type: "Theory", faculty: "Dr. Mahadityasinh Sarvaiya",
+        info: "Sets, relations, functions, matrices and logic for computing." },
+      { name: "Architectural Organization of Computers", type: "Theory", faculty: "Prof. Meghna Bhatt",
+        info: "CPU, memory, I/O organization, number systems and logic gates." },
+      { name: "Programming Practices - 1 (Basics of C)", type: "Theory + Lab", faculty: "Prof. Vipul Bambhaniya",
+        info: "C programming: variables, operators, conditions, loops, arrays and functions." },
+      { name: "Basics of Web Development", type: "Theory + Lab", faculty: "Prof. Hardik Chavda",
         info: "HTML5, CSS3, Bootstrap, JavaScript and publishing websites." },
-      { name: "Mathematics for Computing", type: "Theory", credits: 3,
-        info: "Sets, logic, matrices and statistics used in computer science." },
-      { name: "Communication Skills", type: "Theory", credits: 2,
-        info: "Professional reading, writing and presentation skills." }
+      { name: "Environmental Science", type: "Theory", faculty: "Prof. Ila Sarkar",
+        info: "Ecosystems, natural resources, pollution and sustainable development." }
     ];
 
     // Builds the list using a loop
@@ -68,7 +70,7 @@
 
       document.getElementById("details").innerHTML =
         "<h2>" + s.name + "</h2>" +
-        "<p class='meta'>Type: " + s.type + " | Credits: " + s.credits + "</p>" +
+        "<p class='meta'>Type: " + s.type + " | Faculty: " + s.faculty + "</p>" +
         "<p>" + s.info + "</p>" +
         "<p><small>Subject " + (index + 1) + " of " + subjects.length + "</small></p>";
     }

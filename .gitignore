@@ -1,7 +1,8 @@
 # helper scripts (not part of the assignment)
-push-day*.bat
+push-*.bat
 
 # OS files
 Thumbs.db
 desktop.ini
 .DS_Store
+push-retry.bat
